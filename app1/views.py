@@ -42,6 +42,7 @@ def handlelogin(request):
         return HttpResponse("404-error")
 
 def flogout(request):
+    messages.success(request,"Logged out Successfully")
     logout(request)
     return render(request,'app1/login.html')
 def loginpage(request):

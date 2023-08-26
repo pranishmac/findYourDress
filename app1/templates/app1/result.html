@@ -1,144 +1,97 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% comment %} bootstrap css {% endcomment %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
-        <link rel="stylesheet" href="">
-
-
-
-        <style>
-          img {
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
-          }
-          body,h1 {font-family: "Sofia", sans-serif, }
-         body, html {height: 100% }
-        .bgimg {
-            background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
-            min-height: 100%;
-            background-position: center;
-            background-size: cover;
-          }
+  <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet">
+  <link rel="stylesheet" href="">
+  <style>
+    p{
+      margin-bottom: 0;
+    }
+    img {
+      display: block;
+        width:  100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       
-          body {
-              text-align: center;
-          }
-      
-          form {
-              display: inline-block;
-          }
-      
-          .myClass {
-              margin-left: 37%;
-              margin-right: 25%;
-              width: 50%;
-          }
+    }
+    body, h1 {
+      font-family: "Sofia", sans-serif;
+    }
+    body, html {
+      height: 100%;
+    }
+    .bgimg {
+      background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+    body {
+      text-align: center;
+      background-color: #eee;
+    }
+    .title {
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+    .card-block {
+      font-size: 1em;
+      position: relative;
+      margin: 0;
+      padding: -3em;
+      border: none;
+      border-top: 1px solid rgba(34, 36, 38, .1);
+      box-shadow: none;
+    }
+    .card {
+      font-size: 1em;
+      overflow: hidden;
+      padding: -3;
+      border: none;
+      border-radius: .28571429rem;
+      box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+      margin-top: 20px;
+    }
+    .container {
+      margin-top: 1rem;
+    }
 
-          body {
-            background-color:  #eee;
-          }
-          .title {
-           
-              margin-bottom: 50px;
-              text-transform: uppercase;
-          }
-          
-          .card-block {
-              font-size: 1em;
-              position: relative;
-              margin: 0;
-              padding: -3em;
-              border: none;
-              border-top: 1px solid rgba(34, 36, 38, .1);
-              box-shadow: none;
-               
-          }
-          .card {
-              font-size: 1em;
-              overflow: hidden;
-              padding: -3;
-              border: none;
-              border-radius: .28571429rem;
-              box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-              margin-top:20px;
-          }
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,600;1,400;1,700&display=swap" rel="stylesheet">      </style>
-    </head>
-    <body >
-    
- <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-      <h1>
-        {% for content in contents %}
-            {% comment %} <div>
-                <h5> {{content.type}}--{{content.gender}}--{{content.name}}</h5>
-                <img src="/media/{{content.pic}}" height="400" width="550">
-            </div> {% endcomment %}
-
-            {% comment %} <div class="card mb-3">
-                <img src="/media/{{content.pic}}" class="card-img-top" alt="pic">
-                <div class="card-body">
-                  <h5 class="card-title">{{content.gender}}</h5>
-                  <p class="card-text">{{content.name}}</p>
-                </div>
-            </div> {% endcomment %}
-
-
-            {% comment %} <div class="card text-bg-dark">
-                <img src="/media/{{content.pic}}" class="card-img .img-responsive" alt="...">
-                <div class="card-img-overlay">
-                  <h5 class="card-title">{{content.gender}}</h5>
-                  <p class="card-text">{{content.name}}</p>
-                </div>
-              </div> {% endcomment %}
-            
-            {% comment %} <div class="card" style="width: 18rem;">
-            <img src="/media/{{content.pic}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">
-                    {{content.gender}}<br>
-                    {{content.name}}<br>
-                </p>
-            </div>
-            </div> {% endcomment %}
-
-
-
-            <div class="container py-1">
-                <!-- Card Start -->
-                <div class="card">
-                  <div class="row ">
-              
-                    <div class="col-md-7 px-1" >
-                      <div class="card-block px-1">
-                        <p class="card-title" align="center">{{content.gender}}</p>
-                        <p class="card-text" align="center">{{content.name}}</p>
-                        <br>
-                      </div>
-                    </div>
-                    <!-- Carousel start -->
-                    <img src="/media/{{content.pic}}" class="card-img-top" alt="...">                  
-                    <!-- End of carousel -->
-                  </div>
-                </div>
-                <!-- End of card -->
-              
-              </div>
-              
-        {% endfor %}
-      </h1>
+    .blog-container{
+      max-width: 75vw;
+      margin: 0 auto;
+    }
+    .blog-content{
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="container">
+    {% for content in contents %}
+      <div class="d-flex flex-column blog-container">
+        <div>
+          <img src="/media/{{content.pic}}" class="card-img-top" alt="...">
+        </div>
+        <div class="blog-content px-1">
+          <div class="px-1">
+            <p align="center">{{content.gender}}</p>
+            <p align="center">{{content.name}}</p>
+          </div>
+        </div>
+        
     </div>
-
-    </body>
+    {% endfor %}
+  </div>
+</div>
+</body>
 </html>
-

@@ -18,10 +18,10 @@ from django.contrib import messages
 def name(request):
     return render(request,'index.html',)
 def about(request):
-    messages.success(request,"Welcome to about")
+    # messages.success(request,"Welcome to about")
     return render(request,'app1/about.html',)
 def contact(request):
-    messages.success(request,"Welcome to Contact")
+    # messages.success(request,"Welcome to Contact")
     return render(request,'app1/contact.html',)
 
 
@@ -45,6 +45,7 @@ def flogout(request):
     messages.success(request,"Logged out Successfully")
     logout(request)
     return render(request,'app1/login.html')
+
 def loginpage(request):
     return render(request,'app1/login.html')
 
@@ -65,6 +66,7 @@ def signuppage(request):
 
 
 def handleSignup(request):
+    # print(request)
     if request.method=="POST":
         username=request.POST.get('username')
         email=request.POST.get('email')
@@ -73,6 +75,9 @@ def handleSignup(request):
         pass1=request.POST.get('pass1')
         pass2=request.POST.get('pass2')
 
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already exists. Please choose a different username.")
+            return render(request, "app1/signuppage.html")
         if(pass1 != pass2):
             return HttpResponse("<h1>password did not match!!!!!!!</h1>")
 
@@ -89,6 +94,7 @@ def handleSignup(request):
 
     
 def usereq(request):
+    # print(request)
     typehere=request.POST.get('type')
     genderhere=request.POST.get("gender")
     print(genderhere)
